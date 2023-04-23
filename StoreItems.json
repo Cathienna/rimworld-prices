@@ -2,7 +2,7 @@
 	"items" : [
 	{
 		"abr": "beer",
-		"price": 20,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "Beer"
 	},
@@ -14,55 +14,55 @@
 	},
 	{
 		"abr": "ambrosia",
-		"price": 25,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "Ambrosia"
 	},
 	{
 		"abr": "go-juice",
-		"price": 88,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "GoJuice"
 	},
 	{
 		"abr": "luciferium",
-		"price": 117,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "Luciferium"
 	},
 	{
 		"abr": "penoxycyline",
-		"price": 30,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "Penoxycyline"
 	},
 	{
 		"abr": "flake",
-		"price": 23,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "Flake"
 	},
 	{
 		"abr": "psychitetea",
-		"price": 17,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "PsychiteTea"
 	},
 	{
 		"abr": "yayo",
-		"price": 35,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "Yayo"
 	},
 	{
 		"abr": "smokeleafjoint",
-		"price": 18,
+		"price": 19999000,
 		"category": "Drugs",
 		"defname": "SmokeleafJoint"
 	},
 	{
 		"abr": "wake-up",
-		"price": 58,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "WakeUp"
 	},
@@ -3728,49 +3728,49 @@
 	},
 	{
 		"abr": "gin",
-		"price": 20,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_Gin"
 	},
 	{
 		"abr": "tequila",
-		"price": 25,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_Tequila"
 	},
 	{
 		"abr": "vodka",
-		"price": 13,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_Vodka"
 	},
 	{
 		"abr": "whiskey",
-		"price": 50,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_Whiskey"
 	},
 	{
 		"abr": "double-agedwhiskey",
-		"price": 100,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_DoubleWhiskey"
 	},
 	{
 		"abr": "coffee",
-		"price": 13,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_HotCoffee"
 	},
 	{
 		"abr": "icedcoffee",
-		"price": 15,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_IceCoffee"
 	},
 	{
 		"abr": "energydrink",
-		"price": 22,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_EnergyDrink"
 	},
@@ -3782,13 +3782,13 @@
 	},
 	{
 		"abr": "soda",
-		"price": 20,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_Soda"
 	},
 	{
 		"abr": "tea",
-		"price": 13,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_Tea"
 	},
@@ -3878,49 +3878,49 @@
 	},
 	{
 		"abr": "cigarettes",
-		"price": 13,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_Cigarettes"
 	},
 	{
 		"abr": "cigars",
-		"price": 100,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_Cigars"
 	},
 	{
 		"abr": "dalgonacoffee",
-		"price": 23,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_DalgonaCoffee"
 	},
 	{
 		"abr": "greentea",
-		"price": 23,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_GreenTea"
 	},
 	{
 		"abr": "masalachai",
-		"price": 20,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_MasalaChai"
 	},
 	{
 		"abr": "mintcoffee",
-		"price": 20,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_MintCoffee"
 	},
 	{
 		"abr": "minttea",
-		"price": 13,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_MintTea"
 	},
 	{
 		"abr": "noonchai",
-		"price": 20,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_NoonChai"
 	},
@@ -3938,49 +3938,49 @@
 	},
 	{
 		"abr": "blacktea",
-		"price": 18,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_BlackTea"
 	},
 	{
 		"abr": "cannibalcoffee",
-		"price": 17,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_CannibalCoffee"
 	},
 	{
 		"abr": "irishcoffee",
-		"price": 42,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_IrishCoffee"
 	},
 	{
 		"abr": "kombuchatea",
-		"price": 17,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_Kombucha"
 	},
 	{
 		"abr": "lattecoffee",
-		"price": 20,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_LatteCoffee"
 	},
 	{
 		"abr": "mochacoffee",
-		"price": 17,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_MochaCoffee"
 	},
 	{
 		"abr": "pumpkinspicecoffee",
-		"price": 7,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_PumpkinCoffee"
 	},
 	{
 		"abr": "yuenyeung",
-		"price": 13,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VBE_Yuenyeung"
 	},
@@ -4418,7 +4418,7 @@
 	},
 	{
 		"abr": "aperitif",
-		"price": 27,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VFEE_Aperitif"
 	},
@@ -4772,7 +4772,7 @@
 	},
 	{
 		"abr": "rum",
-		"price": 10,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VFEP_Rum"
 	},
@@ -4862,7 +4862,7 @@
 	},
 	{
 		"abr": "chemshine",
-		"price": 17,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "Chemshine"
 	},
@@ -4976,7 +4976,7 @@
 	},
 	{
 		"abr": "mead",
-		"price": 25,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "VFEV_Mead"
 	},
@@ -6020,19 +6020,19 @@
 	},
 	{
 		"abr": "mechanoidegg",
-		"price": 17,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "GR_ElectroEgg"
 	},
 	{
 		"abr": "featherdustjoint",
-		"price": 17,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "GR_FeatherdustJoint"
 	},
 	{
 		"abr": "poisonampoule",
-		"price": 100,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "GR_PoisonAmpoule"
 	},
@@ -7766,7 +7766,7 @@
 	},
 	{
 		"abr": "agepills",
-		"price": 100,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "GR_AgePills"
 	},
@@ -8720,7 +8720,7 @@
 	},
 	{
 		"abr": "darkmatter",
-		"price": 117,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "NakiDarkMatter"
 	},
@@ -10052,7 +10052,7 @@
 	},
 	{
 		"abr": "strawberrybeer",
-		"price": 25,
+		"price": 9999,
 		"category": "Drugs",
 		"defname": "RK_StrawberryBeer"
 	},
@@ -10634,7 +10634,7 @@
 	},
 	{
 		"abr": "humanmeat",
-		"price": 50,
+		"price": 500,
 		"category": "Meat",
 		"defname": "Meat_Human"
 	},
