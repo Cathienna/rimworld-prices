@@ -287,17 +287,17 @@
 	},
 	{
 		"abr": "trait",
-		"price": 1,
+		"price": 500,
 		"karmatype": "Good"
 	},
 	{
 		"abr": "removetrait",
-		"price": 1,
+		"price": 500,
 		"karmatype": "Good"
 	},
 	{
 		"abr": "genderswap",
-		"price": 600,
+		"price": 1,
 		"karmatype": "Neutral"
 	},
 	{
@@ -352,7 +352,7 @@
 	},
 	{
 		"abr": "surgery",
-		"price": 1,
+		"price": 500,
 		"karmatype": "Neutral"
 	},
 	{
@@ -362,7 +362,7 @@
 	},
 	{
 		"abr": "replacetrait",
-		"price": 1,
+		"price": 500,
 		"karmatype": "Neutral"
 	},
 	{
