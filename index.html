@@ -137,10 +137,10 @@
                                 <input type="text" class="form-control search" aria-label="Search" aria-describedby="inputGroup-sizing-sm">
                             </div>
                             <p>
-                                <button type="button" class="btn btn-primary sort" data-sort="name">
+                                <button type="button" class="btn btn-primary sort" data-sort="defName">
                                     Sort
                                 </button>
-                                <button type="button" class="btn btn-primary sort" data-sort="price">
+                                <button type="button" class="btn btn-primary sort" data-sort="addPrice">
                                     Sort by Price
                                 </button>
                                 <button type="button" class="btn btn-primary sort" data-sort="data.mod">
@@ -152,9 +152,9 @@
                             </p>
                             <table class="table traits">
                                 <tr>
-                                    <th scope="col" class="sort" data-sort="abr">Name</th>
-                                    <th scope="col" class="sort" data-sort="price">Add Price</th>
-                                    <th scope="col" class="sort" data-sort="mod">Mod</th>
+                                    <th scope="col" class="sort" data-sort="defName">Name</th>
+                                    <th scope="col" class="sort" data-sort="addPrice">Add Price</th>
+                                    <th scope="col" class="sort" data-sort="data.mod">Mod</th>
                                     <th scope="col" class="sort" data-sort="description">Description</th>
                                 </tr>
                                 <tbody class="list">
@@ -254,12 +254,12 @@
         let traitList = null;
         $.getJSON(traitListURL, function(data) {
             var options = {
-                valueNames: ['abr', 'price', 'removePrice', 'description', 'data.mod'],
-                item: '<tr><td class="abr" scope="row"></td><td class="price"></td><td class="removePrice"></td><td class="description"></td><td class="mod"></td></tr>'
+                valueNames: ['defName', 'addPrice', 'removePrice', 'description', 'data.mod'],
+                item: '<tr><td class="defName" scope="row"></td><td class="addPrice"></td><td class="removePrice"></td><td class="description"></td><td class="data.mod"></td></tr>'
             };
 
             var traitData = [];
-            $.each(data.items, function(index, value) {
+            $.each(data.traits, function(index, value) {
                 if (value["price"] > 0) {
                     traitData.push(value);
                 }
@@ -301,10 +301,10 @@
             });
 	    traitList.filter(function(item) {
                 var allow = true;
-                if (minPrice != "" && parseInt(item.values().price) < minPrice) {
+                if (minPrice != "" && parseInt(item.values().addPrice) < minPrice) {
                     allow = false;
                 }
-                if (maxPrice != "" && parseInt(item.values().price) > maxPrice) {
+                if (maxPrice != "" && parseInt(item.values().addPrice) > maxPrice) {
                     allow = false;
                 }
                 return allow;
