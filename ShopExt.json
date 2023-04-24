@@ -1,11 +1,11 @@
 {
     "traits" : [
      {
-        "price":1000,
-        "removePrice":500,
-        "description":"Timmy enjoys the feeling of freedom that comes from being nude. he can handle clothing, but will be happier without it.",
-        "mod":"RimWorld",
-        "abr":"nudist"
+        "price": 1000,
+        "removePrice": 500,
+        "description": "Timmy enjoys the feeling of freedom that comes from being nude. he can handle clothing, but will be happier without it.",
+        "mod": "RimWorld",
+        "abr": "nudist"
      }
   ]
 }
