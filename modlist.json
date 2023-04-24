@@ -1,4 +1,5 @@
-[
+{
+	"mods" : [
   {
     "author": "Andreas Pardeike",
     "name": "Harmony",
@@ -1152,3 +1153,4 @@
     "version": "1.0.0.0"
   }
 ]
+}
