@@ -153,8 +153,8 @@
                             <table class="table traits">
                                 <tr>
                                     <th scope="col" class="sort" data-sort="abr">Name</th>
-                                    <th scope="col" class="sort" data-sort="price">Price</th>
-                                    <th scope="col" class="sort" data-sort="data.mod">Mod</th>
+                                    <th scope="col" class="sort" data-sort="price">Add Price</th>
+                                    <th scope="col" class="sort" data-sort="mod">Mod</th>
                                     <th scope="col" class="sort" data-sort="description">Description</th>
                                 </tr>
                                 <tbody class="list">
@@ -254,8 +254,8 @@
         let traitList = null;
         $.getJSON(traitListURL, function(data) {
             var options = {
-                valueNames: ['abr', 'price', 'description', 'data.mod'],
-                item: '<tr><td class="abr" scope="row"></td><td class="addPrice"></td><td class="description"></td><td class="data.mod"></td></tr>'
+                valueNames: ['abr', 'price', 'removePrice', 'description', 'data.mod'],
+                item: '<tr><td class="abr" scope="row"></td><td class="price"></td><td class="removePrice"></td><td class="description"></td><td class="mod"></td></tr>'
             };
 
             var traitData = [];
@@ -301,12 +301,12 @@
             });
 	    traitList.filter(function(item) {
                 var allow = true;
-                /*if (minPrice != "" && parseInt(item.values().price) < minPrice) {
+                if (minPrice != "" && parseInt(item.values().price) < minPrice) {
                     allow = false;
                 }
                 if (maxPrice != "" && parseInt(item.values().price) > maxPrice) {
                     allow = false;
-                }*/
+                }
                 return allow;
             });
         }
