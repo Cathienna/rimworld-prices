@@ -14,6 +14,7 @@
         const itemListURL = "https://raw.githubusercontent.com/Cathienna/rimworld-prices/main/StoreItems.json";
         const traitListURL = "https://raw.githubusercontent.com/Cathienna/rimworld-prices/main/ShopExt.json";
         const eventListURL = "https://raw.githubusercontent.com/Cathienna/rimworld-prices/main/StoreEvents.json";
+        const modListURL = "https://raw.githubusercontent.com/Cathienna/rimworld-prices/main/modlist.json";
     </script>
 </head>
 
@@ -49,6 +50,9 @@
                                     </button>
                                     <button class="btn btn-success" ng-class="{'active': (selected == '3')}" ng-click='selected=3'>
                                         Traits
+                                    </button>
+                                    <button class="btn btn-success" ng-class="{'active': (selected == '4')}" ng-click='selected=4'>
+                                        Mods
                                     </button>
                                 </div>
                                 <div class="form-group row">
@@ -162,6 +166,34 @@
                         </div>
                     </div>
                 </div>
+                <div class="row" ng-show='selected == 4'>
+                    <div class="col-md-12">
+                        <div id="mods">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
+                                </div>
+                                <input type="text" class="form-control search" aria-label="Search" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <p style="color:#959595">
+                                <button type="button" class="btn btn-primary sort" data-sort="name">
+                                    Sort by Name
+                                </button>
+                                <button type="button" class="btn btn-primary sort" data-sort="author">
+                                    Sort by Author
+                                </button>
+                            </p>
+                            <table class="table mods">
+                                <tr>
+                                    <th scope="col" class="sort" data-sort="name">Name</th>
+                                    <th scope="col" class="sort" data-sort="author">Author</th>
+                                </tr>
+                                <tbody class="list">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -203,6 +235,12 @@
             background-color: #202020;
         }
         .traits {
+            color: #959595;
+        }
+        .mods {
+            background-color: #202020;
+        }
+        .mods {
             color: #959595;
         }
         .col-md-12 {
@@ -267,6 +305,21 @@
             traitList = new List('traits', options, traitData);
         });
 
+        let modList = null;
+        $.getJSON(modListURL, function(data) {
+            var options = {
+                valueNames: ['name', 'author'],
+                item: '<tr><td class="name" scope="row"></td><td class="author"></td></tr>'
+            };
+
+            var modData = [];
+            $.each(data.mods, function(index, value) {
+                modData.push(value);
+            });
+
+            modList = new List('mods', options, modData);
+        });
+
         $("#item-price-min").keyup(function() {
             updateItemFilter();
         });
@@ -306,6 +359,10 @@
                 if (maxPrice != "" && parseInt(item.values().addPrice) > maxPrice) {
                     allow = false;
                 }
+                return allow;
+            });
+	    modList.filter(function(item) {
+                var allow = true;
                 return allow;
             });
         }
