@@ -10,10 +10,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
-    <title>Cathienna's Item List</title>
     <script type="text/javascript">
         const itemListURL = "https://raw.githubusercontent.com/Cathienna/rimworld-prices/main/StoreItems.json";
         const eventListURL = "https://raw.githubusercontent.com/Cathienna/rimworld-prices/main/StoreEvents.json";
+        const traitListURL = "https://raw.githubusercontent.com/Cathienna/rimworld-prices/main/ShopExt.json";
     </script>
 </head>
 
@@ -50,6 +50,9 @@
                                     </button>
                                     <button class="btn btn-success" ng-class="{'active': (selected == '2')}" ng-click='selected=2'>
                                         Events
+                                    </button>
+                                    <button class="btn btn-success" ng-class="{'active': (selected == '3')}" ng-click='selected=3'>
+                                        Traits
                                     </button>
                                 </div>
                                 <div class="form-group row">
@@ -126,17 +129,47 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="container">
-            <!-- Example row of columns -->
-            <div class="row">
-                <div class="col-md-6">
+                <div class="row" ng-show='selected == 3'>
+                    <div class="col-md-12">
+                        <div id="traits">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
+                                </div>
+                                <input type="text" class="form-control search" aria-label="Search" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <p>
+                                <button type="button" class="btn btn-primary sort" data-sort="defName">
+                                    Sort by Name
+                                </button>
+                                <button type="button" class="btn btn-primary sort" data-sort="addPrice">
+                                    Sort by Add Cost
+                                </button>
+                                <button type="button" class="btn btn-primary sort" data-sort="removePrice">
+                                    Sort by Remove Cost
+                                </button>
+                                <button type="button" class="btn btn-primary sort" data-sort="description">
+                                    Sort by Description
+                                </button>
+                                <button type="button" class="btn btn-primary sort" data-sort="data.mod">
+                                    Sort by Mod
+                                </button>
+                            </p>
+                            <table class="table events">
+                                <tr>
+                                    <th scope="col" class="sort" data-sort="defName">Name</th>
+                                    <th scope="col" class="sort" data-sort="addPrice">Add Cost</th>
+                                    <th scope="col" class="sort" data-sort="removePrice">Remove Cost</th>
+                                    <th scope="col" class="sort" data-sort="description">Description</th>
+                                    <th scope="col" class="sort" data-sort="data.mod">Mod</th>
+                                </tr>
+                                <tbody class="list">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                </div>
             </div>
-            <hr>
         </div>
     </main>
     <footer class="text-muted">
@@ -224,6 +257,21 @@
             eventList = new List('events', options, eventData);
         });
 
+        let traitList = null;
+        $.getJSON(traitListURL, function(data) {
+            var options = {
+                valueNames: ['defName', 'addPrice', 'removePrice', 'description'],
+                item: '<tr><td class="defName" scope="row"></td><td class="addPrice"></td><td class="removePrice"></td><td class="data.mod"><td class="description"></td></tr>'
+            };
+
+            var traitData = [];
+            $.each(data.items, function(index, value) {
+                traitData.push(value);
+            });
+
+            traitList = new List('traits', options, traitData);
+        });
+
         $("#item-price-min").keyup(function() {
             updateItemFilter();
         });
@@ -246,6 +294,16 @@
                 return allow;
             });
 	    eventList.filter(function(item) {
+                var allow = true;
+                if (minPrice != "" && parseInt(item.values().price) < minPrice) {
+                    allow = false;
+                }
+                if (maxPrice != "" && parseInt(item.values().price) > maxPrice) {
+                    allow = false;
+                }
+                return allow;
+            });
+	    traitList.filter(function(item) {
                 var allow = true;
                 if (minPrice != "" && parseInt(item.values().price) < minPrice) {
                     allow = false;
