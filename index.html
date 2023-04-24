@@ -143,7 +143,7 @@
                                 <button type="button" class="btn btn-primary sort" data-sort="addPrice">
                                     Sort by Price
                                 </button>
-                                <button type="button" class="btn btn-primary sort" data-sort="data.mod">
+                                <button type="button" class="btn btn-primary sort" data-sort="mod">
                                     Sort by Mod
                                 </button>
                                 <button type="button" class="btn btn-primary sort" data-sort="description">
@@ -154,7 +154,7 @@
                                 <tr>
                                     <th scope="col" class="sort" data-sort="defName">Name</th>
                                     <th scope="col" class="sort" data-sort="addPrice">Add Price</th>
-                                    <th scope="col" class="sort" data-sort="data.mod">Mod</th>
+                                    <th scope="col" class="sort" data-sort="mod">Mod</th>
                                     <th scope="col" class="sort" data-sort="description">Description</th>
                                 </tr>
                                 <tbody class="list">
@@ -254,8 +254,8 @@
         let traitList = null;
         $.getJSON(traitListURL, function(data) {
             var options = {
-                valueNames: ['defName', 'addPrice', 'removePrice', 'description', 'data.mod'],
-                item: '<tr><td class="defName" scope="row"></td><td class="addPrice"></td><td class="removePrice"></td><td class="description"></td><td class="data.mod"></td></tr>'
+                valueNames: ['defName', 'addPrice', 'removePrice', 'description', 'mod'],
+                item: '<tr><td class="defName" scope="row"></td><td class="addPrice"></td><td class="removePrice"></td><td class="description"></td><td class="mod"></td></tr>'
             };
 
             var traitData = [];
