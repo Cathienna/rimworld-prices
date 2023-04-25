@@ -1,5 +1,4 @@
-{
-	"mods" : [
+[
   {
     "author": "Andreas Pardeike",
     "name": "Harmony",
@@ -727,18 +726,6 @@
     "version": null
   },
   {
-    "author": "Aperture staff",
-    "name": "Dragonian Race Apparel Patch",
-    "steamId": null,
-    "version": null
-  },
-  {
-    "author": "Ancot",
-    "name": "Ancots Dragonian Facial Animation",
-    "steamId": null,
-    "version": null
-  },
-  {
     "author": "Mlie",
     "name": "Apparel Organizer (Continued)",
     "steamId": null,
@@ -1151,6 +1138,41 @@
     "name": "Yayo's Animation (Continued)",
     "steamId": "2877292196",
     "version": "1.0.0.0"
+  },
+  {
+    "author": "kenney84",
+    "name": "Kenney's Addons - Reduced Meal Costs",
+    "steamId": null,
+    "version": null
+  },
+  {
+    "author": "darkmiz",
+    "name": "Kurin HAR Restricted Apparel Patch",
+    "steamId": null,
+    "version": null
+  },
+  {
+    "author": "Hatti",
+    "name": "QualitySurgeon",
+    "steamId": null,
+    "version": null
+  },
+  {
+    "author": "Roolo",
+    "name": "Search and Destroy",
+    "steamId": null,
+    "version": null
+  },
+  {
+    "author": "TimmyLiang",
+    "name": "TradeHelper",
+    "steamId": "2113372560",
+    "version": "0.0.0.0"
+  },
+  {
+    "author": "Knight",
+    "name": "Use Your Gun!",
+    "steamId": null,
+    "version": null
   }
 ]
-}
