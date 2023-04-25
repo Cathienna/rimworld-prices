@@ -15,26 +15,12 @@
         const traitListURL = "https://raw.githubusercontent.com/Cathienna/rimworld-prices/main/ShopExt.json";
         const eventListURL = "https://raw.githubusercontent.com/Cathienna/rimworld-prices/main/StoreEvents.json";
         const modListURL = "https://raw.githubusercontent.com/Cathienna/rimworld-prices/main/modlist.json";
+        const commandsListURL = "https://raw.githubusercontent.com/Cathienna/rimworld-prices/main/commands.json";
     </script>
 </head>
 
 <body style="background-color: #202020">
     <main role="main">
-        <div class="jumbotron">
-                <p style="color:#959595">Twitch integration that integrates storytelling decisions into chat votes, awards viewers coins for watching, and those coins can be spent on items/events in game.</p>
-                <ul class="list-group">
-                    <li class="list-group-item" color:white>!bal - check balance and karma rate</li>
-                    <li class="list-group-item">!buy - Usage: !buy beer 6 - purchase an item or event</li>
-                    <li class="list-group-item">$ITEM - Usage: $beer 6 - purchase an item</li>
-                    <li class="list-group-item">!whatiskarma - explains what the karma system is</li>
-                    <li class="list-group-item">!rimworld - gives users a link to the public purchase list</li>
-                    <li class="list-group-item">!instructions - gives users info on using the mod</li>
-                    <li class="list-group-item">!giftcoins - Usage: !giftcoins @username 100 - give another viewer your coins</li>
-                    <li class="list-group-item">!joinqueue - join the viewer name queue</li>
-                    <li class="list-group-item">!mypawnstory - view information about your pawns backstory</li>
-                    <li class="list-group-item">!mypawnskills - view information about your pawns skills</li>
-                </ul>
-        </div>
         <div ng-app='tabs' ng-controller='tabCtrl'>
             <div class="jumbotron">
                 <div class="row">
@@ -53,6 +39,9 @@
                                     </button>
                                     <button class="btn btn-success" ng-class="{'active': (selected == '4')}" ng-click='selected=4'>
                                         Mods
+                                    </button>
+                                    <button class="btn btn-success" ng-class="{'active': (selected == '5')}" ng-click='selected=5'>
+                                        Commands
                                     </button>
                                 </div>
                                 <div class="form-group row">
@@ -145,9 +134,6 @@
                                 <button type="button" class="btn btn-primary sort" data-sort="addPrice">
                                     Sort by Price
                                 </button>
-                                <button type="button" class="btn btn-primary sort" data-sort="mod">
-                                    Sort by Mod
-                                </button>
                                 <button type="button" class="btn btn-primary sort" data-sort="description">
                                     Sort by Description
                                 </button>
@@ -157,7 +143,6 @@
                                     <th scope="col" class="sort" data-sort="name">Name</th>
                                     <th scope="col" class="sort" data-sort="addPrice">Add Cost</th>
                                     <th scope="col" class="sort" data-sort="removePrice">Remove Cost</th>
-                                    <th scope="col" class="sort" data-sort="mod">Mod</th>
                                     <th scope="col" class="sort" data-sort="description">Description</th>
                                 </tr>
                                 <tbody class="list">
@@ -187,6 +172,42 @@
                                 <tr>
                                     <th scope="col" class="sort" data-sort="name">Name</th>
                                     <th scope="col" class="sort" data-sort="author">Author</th>
+                                </tr>
+                                <tbody class="list">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" ng-show='selected == 5'>
+                    <div class="col-md-12">
+                        <div id="commands">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
+                                </div>
+                                <input type="text" class="form-control search" aria-label="Search" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <p style="color:#959595">
+                                <button type="button" class="btn btn-primary sort" data-sort="defName">
+                                    Sort by Command
+                                </button>
+                                <button type="button" class="btn btn-primary sort" data-sort="description">
+                                    Sort by Description
+                                </button>
+                                <button type="button" class="btn btn-primary sort" data-sort="usage">
+                                    Sort by Usage
+                                </button>
+                                <button type="button" class="btn btn-primary sort" data-sort="userLevel">
+                                    Sort by Restriction
+                                </button>
+                            </p>
+                            <table class="table commands">
+                                <tr>
+                                    <th scope="col" class="sort" data-sort="defName">Comand</th>
+                                    <th scope="col" class="sort" data-sort="description">Description</th>
+                                    <th scope="col" class="sort" data-sort="usage">Usage</th>
+                                    <th scope="col" class="sort" data-sort="userLevel">Restriction</th>
                                 </tr>
                                 <tbody class="list">
                                 </tbody>
@@ -243,6 +264,12 @@
         .mods {
             color: #959595;
         }
+        .commands {
+            background-color: #202020;
+        }
+        .commands {
+            color: #959595;
+        }
         .col-md-12 {
             background-color: #202020;
         }
@@ -291,8 +318,8 @@
         let traitList = null;
         $.getJSON(traitListURL, function(data) {
             var options = {
-                valueNames: ['name', 'addPrice', 'removePrice', 'mod', 'description'],
-                item: '<tr><td class="name" scope="row"></td><td class="addPrice"></td><td class="removePrice"></td><td class="mod"></td><td class="description"></td></tr>'
+                valueNames: ['name', 'addPrice', 'removePrice', 'description'],
+                item: '<tr><td class="name" scope="row"></td><td class="addPrice"></td><td class="removePrice"></td><td class="description"></td></tr>'
             };
 
             var traitData = [];
@@ -318,6 +345,21 @@
             });
 
             modList = new List('mods', options, modData);
+        });
+
+        let commandsList = null;
+        $.getJSON(commandsListURL, function(data) {
+            var options = {
+                valueNames: ['defName', 'description', 'usage', 'userLevel'],
+                item: '<tr><td class="defName" scope="row"></td><td class="description"></td><td class="usage"></td><td class="userLevel"></td></tr>'
+            };
+
+            var commandsData = [];
+            $.each(data.commands, function(index, value) {
+                commandsData.push(value);
+            });
+
+            commandsList = new List('commands', options, commandsData);
         });
 
         $("#item-price-min").keyup(function() {
@@ -362,6 +404,10 @@
                 return allow;
             });
 	    modList.filter(function(item) {
+                var allow = true;
+                return allow;
+            });
+	    commandsList.filter(function(item) {
                 var allow = true;
                 return allow;
             });
