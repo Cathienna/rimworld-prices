@@ -1,5 +1,5 @@
 {
-  mods : [
+  "mods" : [
     {
       "author": "Andreas Pardeike",
       "name": "Harmony",
