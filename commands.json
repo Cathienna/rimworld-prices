@@ -1151,24 +1151,6 @@
       "userLevel": "Anyone",
       "shortcut": false,
       "defName": "Divorce"
-    },
-    {
-      "data": {
-        "isShortcut": false,
-        "isBuy": false,
-        "isBalance": false,
-        "hasGlobalCooldown": false,
-        "globalCooldown": 0,
-        "hasLocalCooldown": false,
-        "localCooldown": 0,
-        "mod": "ToolkitCore"
-      },
-      "description": null,
-      "name": "hello",
-      "usage": "!hello",
-      "userLevel": "Moderator",
-      "shortcut": false,
-      "defName": "HelloWorld"
     }
   ]
 }
